@@ -4,17 +4,17 @@ NOW ls:int list
 let quicksort ls = 
   let rec pivot lis p res=
     match (lis,res) with
-    |(h::t,(l,r)) when h >= p -> pivot t p (l,h::r)
-    |(h::t,(l,r)) when h < p -> pivot t p (h::l,r)
+    |(h::t,(l,c,r)) when h > p -> pivot t p (l,c,h::r)
+    |(h::t,(l,c,r)) when h = p -> pivot t p (l,h::c,r)                              
+    |(h::t,(l,c,r)) when h < p -> pivot t p (h::l,c,r)
     |([],_)-> res
   and qsort list =
     match list with
     |[]-> list
     |[x] -> list
     |h::t -> 
-        let (lp,rp) = pivot list h ([],[])
-        in let qr = qsort rp
-        in let ql = qsort lp
-        in List.append ql qr 
+        let (lp,cp,rp) = pivot t h ([],[],[])
+        in List.append (List.append (qsort (lp)) (h::cp)) (qsort rp)
   in 
-  qsort ls;;
+  qsort ls
+;;
