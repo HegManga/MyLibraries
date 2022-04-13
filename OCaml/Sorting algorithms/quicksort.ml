@@ -1,5 +1,5 @@
 (*
-ls:int list for now
+NOW ls:int list 
 *)
 let quicksort ls = 
   let rec pivot lis p res=
