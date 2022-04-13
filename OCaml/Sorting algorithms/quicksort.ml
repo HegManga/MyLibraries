@@ -1,3 +1,6 @@
+(*
+ls:int list for now
+*)
 let quicksort ls = 
   let rec pivot lis p res=
     match (lis,res) with
