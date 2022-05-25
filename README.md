@@ -1,2 +1,2 @@
-# MyLibraries-OCaml
+# MyLibraries
 Made for fun
