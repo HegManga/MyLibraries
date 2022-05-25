@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+#include "../../include/matrix/matrix_typedef.h"
+#include "../../include/matrix/matrix_constructors.h"
 #include "../rand/rand.h"
+
 /*
 typedef struct M{
 	matrix_table*table;
@@ -12,7 +16,7 @@ typedef struct M{
 	//
 } mmatrix;
 */
-matrix matrix_new(matrix_table_type type_id, char **argv){
+matrix matrix_new(matrix_table_type type_id, unsigned int rows, unsigned int columns, matrix_type_opt *types_opt,  char **argv){
 	//private function, create an invalid matrix
 	
 	}
@@ -21,7 +25,7 @@ matrix matrix_ones(unsigned int rows, unsigned int columns){
 	return ret;
 	}
 matrix matrix_zeros(unsigned int rows, unsigned int columns);
-matrix matrix_rand(unsigned int rows, unsigned int columns,matrix_table_type mttype,);
+matrix matrix_rand(unsigned int rows, unsigned int columns, );
 matrix matrix_rand_int(unsigned int rows, unsigned int columns,unsigned int max);
 matrix matrix_eye(unsigned int rows, unsigned int columns);
 

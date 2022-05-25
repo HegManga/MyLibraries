@@ -1,3 +1,7 @@
+
+#ifndef MATRIX_TYPEDEF_H
+#define MATRIX_TYPEDEF_H
+
 /* **************************************************** */
 /* Types dfinitions                                     */
 
@@ -17,7 +21,7 @@ typedef enum{
 	permutation,
 	householder,
 	gauss_frobenius
-	}matrix_type_opt;
+	}matrix_type_opt_enum;
 
 typedef enum{
 	signed_char,
@@ -42,14 +46,21 @@ typedef union tab{
 	double* d;
 	}matrix_table;	
 	
+typedef struct M_T_O{
+	matrix_type_opt_enum *types;
+	unsigned int size;
+}matrix_type_opt;
+
 typedef struct M{
 	matrix_table*table;
 	matrix_table_type type_id;
 	unsigned int rows; 
 	unsigned int columns;
-	matrix_type_opt type_opt;
-	unsigned int nonzeros_element;
+	matrix_type_opt types_opt;
+	//unsigned int nonzeros_element;
 	//
 } mmatrix;
 
 typedef mmatrix* matrix;
+
+#endif

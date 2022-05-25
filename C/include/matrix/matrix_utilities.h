@@ -1,11 +1,13 @@
+#include "matrix_typedef.h"
+
 /********************************************* */
 /* Utilities                                */
 
 #ifndef BOOLEAN_H
 
 typedef enum{
-	false,
-	true
+	_false,
+	_true
 	}boolean;
 
 #endif
