@@ -20,6 +20,7 @@ matrix matrix_new(matrix_table_type type_id, unsigned int rows, unsigned int col
 	//private function, create an invalid matrix
 	
 	}
+	
 matrix matrix_ones(unsigned int rows, unsigned int columns){
 	matrix ret;
 	matrix_type_opt *types_opt = NULL;
@@ -29,6 +30,7 @@ matrix matrix_ones(unsigned int rows, unsigned int columns){
 	ret->is_valid=_true;
 	return ret;
 	}
+
 matrix matrix_zeros(unsigned int rows, unsigned int columns);
 matrix matrix_rand(matrix_table_type type_id, unsigned int rows, unsigned int columns);
 matrix matrix_randint(unsigned int rows, unsigned int columns,unsigned int max);
