@@ -39,7 +39,6 @@ float rand_float_fromto(float min, float max){
     return min + (rand() / div);
 }
 
-
 double rand_double_fromto(double min, double max){
     float range = (max - min); 
     float div = RAND_MAX / range;

@@ -1,16 +1,8 @@
 #include "matrix_typedef.h"
+#include "../boolean/boolean.h"
 
 /********************************************* */
 /* Utilities                                */
-
-#ifndef BOOLEAN_H
-
-typedef enum{
-	_false,
-	_true
-	}boolean;
-
-#endif
 
 void matrix_print(matrix m);
 matrix matrix_clone(matrix m);

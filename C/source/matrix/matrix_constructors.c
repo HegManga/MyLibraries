@@ -16,18 +16,24 @@ typedef struct M{
 	//
 } mmatrix;
 */
-matrix matrix_new(matrix_table_type type_id, unsigned int rows, unsigned int columns, matrix_type_opt *types_opt,  char **argv){
+matrix matrix_new(matrix_table_type type_id, unsigned int rows, unsigned int columns, matrix_type_opt *types_opt){
 	//private function, create an invalid matrix
 	
 	}
 matrix matrix_ones(unsigned int rows, unsigned int columns){
-	matrix ret = matrix_new();
+	matrix ret;
+	matrix_type_opt *types_opt = NULL;
+	matrix_table_type type_id = ones;
+	
+	ret = matrix_new(type_id,rows,columns,types_opt);
+	ret->is_valid=_true;
 	return ret;
 	}
 matrix matrix_zeros(unsigned int rows, unsigned int columns);
-matrix matrix_rand(unsigned int rows, unsigned int columns, );
-matrix matrix_rand_int(unsigned int rows, unsigned int columns,unsigned int max);
+matrix matrix_rand(matrix_table_type type_id, unsigned int rows, unsigned int columns);
+matrix matrix_randint(unsigned int rows, unsigned int columns,unsigned int max);
+matrix matrix_rand_fromto(unsigned int rows, unsigned int columns,matrix_table_type_u min, matrix_table_type_u max);
+matrix matrix_randint_fromto(unsigned int rows, unsigned int columns,int min, int max);
 matrix matrix_eye(unsigned int rows, unsigned int columns);
 
-int main(){
-	return 0;}
+

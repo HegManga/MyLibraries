@@ -2,6 +2,8 @@
 #ifndef MATRIX_TYPEDEF_H
 #define MATRIX_TYPEDEF_H
 
+#include "../boolean/boolean.h"
+
 /* **************************************************** */
 /* Types dfinitions                                     */
 
@@ -9,6 +11,7 @@ typedef enum{
 	no_opt,
 	zeros,
 	ones,
+	costant,
 	identity,
 	sparse,
 	upper_triangular,
@@ -38,7 +41,24 @@ typedef enum{
 	double_point,
 	long_double_point
 	}matrix_table_type;
-	
+
+typedef union mtelu{
+	char signed_char;
+	unsigned char unsigned_char;
+	short short_signed_integer;
+	unsigned short short_unsigned_integer;
+	int signed_integer;
+	unsigned int unsigned_integer;
+	long int signed_long_integer;
+	unsigned long int unsigned_long_integer;
+	long long int signed_long_long_integer;
+	unsigned long long int unsigned_long_long_integer;
+	float floating_point;
+	double double_point;
+	long double long_double_point;
+	}matrix_table_type_u;
+
+
 typedef union tab{
 	int* i;
 	long int* i;
@@ -57,6 +77,7 @@ typedef struct M{
 	unsigned int rows; 
 	unsigned int columns;
 	matrix_type_opt types_opt;
+	boolean is_valid;
 	//unsigned int nonzeros_element;
 	//
 } mmatrix;
